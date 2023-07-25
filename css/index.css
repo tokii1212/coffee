@@ -10,3 +10,76 @@
 }
 
 /*===== header =====*/
+header {
+    background: url(../images/header.jpg);
+    height: 500px;
+}
+
+.mainmenu {
+    background-color: black;
+    background-size: cover;
+}
+
+
+.container > ul {
+    padding: 20px;
+    font-size: 20px;
+    color: aliceblue;
+    display: flex;
+}
+.gnb li {
+    padding-right: 80px;
+}
+
+/*======main======*/
+main {
+    padding: 20px;
+    background-color: bisque;
+}
+
+.container > .ss{
+    padding-top: 20px;
+    display: flex;
+}
+
+.content-txt {
+    padding: 10px;
+    font-weight: bold;
+}
+
+.cafe-map {
+    padding: 20px;
+    background-color: lightslategray;
+}
+
+.ice-coffee {
+    padding: 20px;
+}
+
+.ice-coffee > .container > p {
+    padding-top: 20px;
+    font-size: 20px;
+    color: rgb(85, 226, 233);
+}
+
+.dripcoffee-txt p{
+    font-size: 16px;
+}
+
+.ice-coffee img {
+    padding-left: 50px;
+    width: 350px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+/*=====footer==========*/
+footer {
+    padding-top: 20px;
+    color: aliceblue;
+    width: 100%;
+    height: 80px;
+    text-align: center;
+    background-color: black;
+    font-family: 'Bagel Fat One', cursive;
+}
