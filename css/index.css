@@ -4,6 +4,7 @@
 
 /* 그리드시스템 설정 */
 .container {
+    position: relative;
     width: 100%; /* 모바일, 태블릿의 크기 */
     max-width: 1024px; /* pc 크기 */
     margin: 0 auto;
@@ -11,67 +12,201 @@
 
 /*===== header =====*/
 header {
-    background: url(../images/header.jpg);
-    height: 500px;
-}
-
-.mainmenu {
-    background-color: black;
+    width: 100%;
+    background: url(../images/header.jpg) no-repeat left top;
+    height: 300px;
     background-size: cover;
 }
 
+.logo-menu {
+    width: 100%; height: 60px;
+    background-color: black;
+}
 
-.container > ul {
-    padding: 20px;
-    font-size: 20px;
+.logo-menu  h1 {
+    position: relative;
     color: aliceblue;
-    display: flex;
-}
-.gnb li {
-    padding-right: 80px;
+    font-family: 'Yeon Sung';
+    padding: 10px 0 0 20px;
 }
 
-/*======main======*/
-main {
+.gnb {
+    display: none;
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    background-color: #727070;
+}
+.gnb > li {
     padding: 20px;
-    background-color: bisque;
 }
 
-.container > .ss{
-    padding-top: 20px;
+.gnb > li:nth-child(2) {
+    background-color: #ccc;
+}
+.gnb > li > a {
+    color: #000;
+} 
+
+.gnb > li > a:hover {
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.mobile-btn {
+    position: absolute;
+    right: 20px;
+    top: 16px;
+    cursor: pointer;
+}
+
+.mobile-btn > span {
+    display: block;
+    width: 30px; height: 2px;
+    background-color: aliceblue;
+}
+
+.mobile-btn > span:nth-child(2) {
+    margin: 10px 0;
+}
+
+
+/* tablet */
+@media (min-width:768px) {
+    header {
+        height: 400px;
+    }
+}
+
+
+/* PC */
+@media (min-width:1024px) {
+    header {
+        height: 500px;
+    }
+
+    .gnb {
+        display: flex; /* 주메뉴 보이기,가로 배치 */
+        justify-content:space-between ;
+        position: absolute;
+        top: 0; right: 20px;
+        width: 300px;
+        background-color: transparent;
+    }
+
+    .gnb > li {
+        padding: 20px 0;
+    }
+    
+    .gnb > li:nth-child(2) {
+        background-color: transparent;
+    }
+    .gnb > li > a {
+        color: #fff;
+    } 
+    
+
+    .mobile-btn {
+        display: none; /* PC 에서는 메뉴 숨기기 */
+    }
+}
+
+/*===============main================*/
+/* mobile */
+
+section {
+    padding: 30px;
+    background-color: antiquewhite;
+}
+
+section#map {
+    background-color: #ccc;
+}
+
+.flex-content {
     display: flex;
+    flex-direction: column;
+}
+
+.flex-content .photo {
+    display: none;
 }
 
 .content-txt {
-    padding: 10px;
-    font-weight: bold;
+    margin-top: 20px;
 }
 
-.cafe-map {
-    padding: 20px;
-    background-color: lightslategray;
+.content-txt {
+    font-weight: 600;
 }
 
-.ice-coffee {
-    padding: 20px;
+.choice .content-txt > h3 {
+    color: skyblue;
+    margin-bottom: 15px;
 }
 
-.ice-coffee > .container > p {
-    padding-top: 20px;
-    font-size: 20px;
-    color: rgb(85, 226, 233);
+#choice .content-txt li {
+    list-style-type: decimal;
+    list-style-position: inside;
+    margin-bottom: 5px;
 }
 
-.dripcoffee-txt p{
-    font-size: 16px;
+
+/* tablet */
+@media (min-width:768px) {
+    .flex-content {
+        flex-direction: row;
+    }
+    .flex-content > section {
+        width: 50%;
+        border: 1px dotted #aaa;
+    }
+    .flex-content > section section#choice {
+        width: 100%;
+    }
+}
+/* PC */
+@media (min-width:1024px) {
+    .flex-content {
+        flex-direction: column;
+    }
+    .flex-content > section {
+        width: 100%;
+        border: none;
+    }
+    .flex-content .photo {
+        display: block;
+    }
+    .flex-box {
+        display: flex;
+    }
+    .flex-box h3 {
+        padding: 20px;
+        color: aqua;
+    }
+
+    .flex-box .photo {
+        display: block;
+        margin: 20px 20px 0 0;
+    }
+
+    section#choice .flex-box .photo {
+        order: 2;
+        margin-right: 0;
+        margin-left: 50px;
+    }
+
+    section#choice .flex-box .photo > img {
+        border-radius: 50%;
+    }
+    section#choice .flex-box .content-txt {
+        order: 1;
+    }
 }
 
-.ice-coffee img {
-    padding-left: 50px;
-    width: 350px;
-    height: 200px;
-    border-radius: 50%;
-}
+
+/*==========footer==================*/
+
 
 /*=====footer==========*/
 footer {
@@ -81,5 +216,8 @@ footer {
     height: 80px;
     text-align: center;
     background-color: black;
-    font-family: 'Bagel Fat One', cursive;
+}
+
+footer > h2 {
+    font-family: 'Yeon Sung';
 }

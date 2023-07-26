@@ -5,28 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function() {
+            $('.mobile-btn').on('click', function() {
+                $('.gnb').slideToggle();
+            })
+        })
+    </script>
     <title>coffee</title>
 </head>
 <body>
     <header>
-        <h1>Coffee</h1>
-        <nav class="mainmenu">
+        <div class="logo-menu">
             <div class="container"> <!-- 그리드시스템 -->
-                <ul class="gnb">
-                    <li><a href="#intro">카페소개</a></li>
-                    <li><a href="#map">오시는 길</a></li>
-                    <li><a href="#">이 달의 추천</a></li> 
-                </ul>
+                <h1>Coffee</h1>
+                <nav class="mainmenu">
+                    <ul class="gnb">
+                        <li><a href="#intro">카페소개</a></li>
+                        <li><a href="#map">오시는 길</a></li>
+                        <li><a href="#choice">이 달의 추천</a></li> 
+                    </ul>
+                </nav>
+                
+                <div class="mobile-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div> <!-- container -->
-        </nav>
+        </div> <!--logo-menu-->
     </header>
 
     <main>
+        <div class="flex-content">
         <section id="intro">
             <div class="container">
                 <h2>카페소개</h2>
-                <div class="ss">
+                <div class="flex-box">
                     <div class="photo">
                         <img src="./images/coffee.jpg" alt="coffee">
                     </div>
@@ -35,14 +51,14 @@
                         <p>휴무 : 매주 수요일<small>(수요일이 공휴일일 경우 수요일 영업, 다음날 휴무)</small>
                         </p>
                     </div>
-                </div>
+                </div><!--flex-box-->
             </div> <!-- container -->
         </section> <!-- intro -->
 
         <section id="map" class="cafe-map">
             <div class="container">
                 <h2>오시는 길</h2>
-                <div class="ss">
+                <div class="flex-box">
                     <div class="photo">
                         <img src="./images/map.jpg" alt="map">
                     </div>
@@ -54,26 +70,29 @@
             </div> <!-- container -->
         </section>
 
-        <section id="intro" class="ice-coffee">
+        <section id="choice">
             <div class="container">
                 <h2>이 달의 추천</h2>
-                <p>핸드드립 아이스커피</p>
-                <div class="ss">
-                    <div class="dripcoffee-txt">
-                        <p>1. 1인분 기준으로 서버에 각얼음 5조각(한 조각의 20cc)를 넣고 추출을 시작한다.</p>
-                        <p>2. 평상시보다 원두의 양은 2배 정도(20g)와 추출액은 얼음 포함해서 200cc까지 내린다.</p>
-                            <p>3. 아이스 잔에 얼음 6~7개 섞어서 시원하게 마신다.</p>
-                        
-                            
+                <div class="flex-box">
+                    <div class="photo">
+                        <img src="./images/ice.jpg" alt="icecoffee">
                     </div>
-                    <img src="./images/ice.jpg" alt="deipcoffee">
+                    <div class="flex-box-txt">
+                        <h3>핸드드립 아이스커피</h3>
+                        <ol>
+                            <li>1. 1인분 기준으로 서버에 각얼음 5조각(한 조각의 20cc)를 넣고 추출을 시작한다.</li>
+                            <li>2. 평상시보다 원두의 양은 2배 정도(20g)와 추출액은 얼음 포함해서 200cc까지 내린다.</li>
+                            <li>3. 아이스 잔에 얼음 6~7개 섞어서 시원하게 마신다.</li>
+                        </ol>
+                    </div>
                 </div>
             </div> <!-- container -->
         </section> <!-- intro -->
+        </div>
     </main>
 
     <footer>
-        <p>My times with Coffee</p>
+        <h2>My times with Coffee</h2>
     </footer>
 </body>
 </html>
